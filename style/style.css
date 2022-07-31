@@ -67,7 +67,7 @@ nav a{
   width: 100%;
   border: none;
   border-radius: 30px;
-  padding: 10px 30px;
+  padding: 8px 30px;
   color: var(--font-color);
   font-size: 1rem;
   background-color: var(--background-color);
@@ -118,14 +118,96 @@ nav .site-name a{
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 /* left icon side  */
 .left-icons{
   position:fixed;
-  width: 250px;
+  top: 61px;
+  left: 0px;
+  bottom: 0px;
+  width: 300px;
   height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 10px;
   background-color: var(--background-color);
+}
+
+.left-icons .icons{
+  padding:10px;
+  border-radius: 10px;
+}
+
+.left-icons .icons a .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8%;
+  height: 100%;
+}
+
+.left-icons .icons > a{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.icons a .icon > i{
+  font-size: 0.75rem;
+}
+
+.left-icons .profile a .icon > img{
+  width: 1.5rem;
+  border-radius: 50%;
+}
+
+.left-icons .groups a .icon > img, .left-icons .pages a .icon > img{
+  width: 2rem;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.left-icons .groups, .left-icons .pages{
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.left-icons .groups:hover{
+  background-color: var(--hover-color);
+}
+
+.left-icons .groups a{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+
+.left-icons .groups a > div{
+  position: relative;
+}
+.left-icons .groups a div > span{
+  position:absolute;
+  top: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+
+
+.left-icons .icons:hover{
+  background-color: var(--hover-color);
 }
 
 /* main  */
@@ -136,21 +218,23 @@ nav .site-name a{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: -1;
 }
 
-.main-container .main{
-  width: 600px;
+.main{
+  width: 40%;
   min-height: 200vh;
-  background-color: var(--background-color);
-}
+  background-color: var(--background-color); 
+ }
 
 /* friends  */
 
 .friends{
-  position:fixed;
-  right: 0px;
-  width: 250px;
+  width: 300px;
   height: 100vh;
+  position: fixed;
+  right: 0px;
+  top: 61px;
   background-color: var(--background-color);
-  z-index: 8;
 }
+
