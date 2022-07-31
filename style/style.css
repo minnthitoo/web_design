@@ -40,7 +40,7 @@ nav{
   align-items: center;
   padding: 10px 20px;
   top: 0px;
-  min-width: 100vw;
+  width: 100%;
   height: 60px;
   background-color: var(--background-color);
   box-shadow: 0px 1px  1px #555;
@@ -181,7 +181,7 @@ nav .site-name a{
   background-color: var(--hover-color);
 }
 
-.left-icons .groups a{
+.left-icons .groups a , .left-icons .pages a{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -229,12 +229,113 @@ nav .site-name a{
 
 /* friends  */
 
-.friends{
+.friends-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 300px;
   height: 100vh;
   position: fixed;
   right: 0px;
   top: 61px;
+  bottom: 0px;
   background-color: var(--background-color);
+  transition: 0.5s;
 }
 
+.friends-container > h1{
+  padding:5px 10px;
+  font-size: larger;
+  color: var(--font-color);
+}
+
+.friends-container:hover{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.friends-container .ads{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.friends-container .ads .ad{
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.friends-container .ads .ad:hover{
+  background-color: var(--hover-color);
+}
+
+.friends-container .ads .ad > a{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.ads .ad a > img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.ads .ad a > .ad-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.ads .ad a .ad-text .title{
+  font-size: large;
+}
+
+.ads .ad a .ad-text .domain{
+  font-size: small;
+}
+
+.friends-container .ads .ad > a{
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.friends-container .pages-profiles{
+  display: flex;
+  flex-direction: column;
+}
+
+.pages-profiles .row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.friends-container .friends .friend{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.friends-container .friends .friend:hover{
+  background-color: var(--hover-color);
+}
+
+.friends .friend > a{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.friends .friend a > img{
+  width: 2rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
