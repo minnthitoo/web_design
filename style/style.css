@@ -6,9 +6,10 @@
 }
 
 :root{
-  --background-color: #242526;
+  --background-color: #18191A;
   --hover-color: #555;
   --font-color: #ffffff;
+   --nav-background: #242526;
 }
 
 /* width */
@@ -31,6 +32,10 @@
   background: #555;
 }
 
+body{
+  background-color: var(--background-color);
+}
+
 /* navbar */
 
 nav{
@@ -42,8 +47,9 @@ nav{
   top: 0px;
   width: 100%;
   height: 60px;
-  background-color: var(--background-color);
+  background-color: var(--nav-background);
   box-shadow: 0px 1px  1px #555;
+  z-index: 3;
 }
 
 nav a{
@@ -224,8 +230,148 @@ nav .site-name a{
 .main{
   width: 40%;
   min-height: 200vh;
-  background-color: var(--background-color); 
+  background-color: var(--background-color);
  }
+
+ .main .my-days{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-evenly;
+  margin-top: 10px;
+ }
+
+ /* my myday  */
+ .my-days .my-myday{
+  position: relative;
+  width: 150px;
+  height: 250px;
+  border-radius: 10px;
+  background-color: var(--nav-background);
+  overflow: hidden;
+ }
+
+ .my-myday a{
+  text-decoration: none;
+  color: var(--font-color);
+ }
+
+ .my-myday-profile{
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  display: inline-block;
+ }
+
+ .my-myday-profile > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s linear;
+ }
+
+ .my-myday a:hover .my-myday-profile > img{
+  transform: scale(1.02);
+ }
+
+.my-myday a .add-logo{
+  position: absolute;
+  top: 170px;
+  left: 55px;
+  width: 40px;
+  height: 40px;
+  background-color: blue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--background-color);
+}
+
+.my-myday a .add-logo i{
+  font-size: large;
+}
+
+.my-myday a .name{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 15px;
+}
+
+/* other myday  */
+
+.other-myday{
+  position: relative;
+  width: 150px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.other-myday .other-profile{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  border: 5px solid var(--background-color);
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.other-profile > img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.other-profile > span{
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: aqua;
+  z-index: 2;
+}
+
+.other-myday .myday-photo{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: inline-block;
+  z-index: -1;
+}
+
+.other-myday .myday-photo > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s linear;
+}
+
+.other-myday a:hover .myday-photo img{
+  transform: scale(1.02);
+}
+
+.other-myday a .name{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.other-myday a .name > p{
+  color: var(--font-color);
+}
+
 
 /* friends  */
 
@@ -239,6 +385,7 @@ nav .site-name a{
   right: 0px;
   top: 61px;
   bottom: 0px;
+  overflow-y: auto;
   background-color: var(--background-color);
   transition: 0.5s;
 }
@@ -305,6 +452,7 @@ nav .site-name a{
 .friends-container .pages-profiles{
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .pages-profiles .row{
@@ -313,6 +461,31 @@ nav .site-name a{
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
+}
+
+.pages-profiles .row > h2{
+  font-size: large;
+  color: var(--font-color);
+}
+
+.pages-profiles .row .row-icon{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pages-profiles .row .row-icon > a{
+  text-decoration: none;
+  color: var(--font-color);
+  border-radius: 50%;
+}
+
+.pages-profiles .row .row-icon > a:hover{
+  background-color: var(--hover-color);
+}
+
+.pages-profiles .row .row-icon a > i {
+  padding: 5px;
 }
 
 .friends-container .friends .friend{
