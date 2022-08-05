@@ -62,10 +62,10 @@ nav a{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 770px;
   height: 40px;
   padding: 5px;
-  border: 1px solid #555;
+  border: 1px solid var(--hover-color);
   border-radius: 40px;
 }
 
@@ -76,7 +76,7 @@ nav a{
   padding: 8px 30px;
   color: var(--font-color);
   font-size: 1rem;
-  background-color: var(--background-color);
+  background-color: var(--nav-background);
 }
 
 .search input:focus{
@@ -228,13 +228,17 @@ nav .site-name a{
 }
 
 .main{
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 780px;
   min-height: 200vh;
   background-color: var(--background-color);
  }
 
  .main .my-days{
   display: flex;
+  position: relative;
   flex-direction: row;
   gap: 10px;
   justify-content: space-evenly;
@@ -268,7 +272,7 @@ nav .site-name a{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s linear;
+  transition: 0.5s;
  }
 
  .my-myday a:hover .my-myday-profile > img{
@@ -281,12 +285,12 @@ nav .site-name a{
   left: 55px;
   width: 40px;
   height: 40px;
-  background-color: blue;
+  background-color: aqua;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px solid var(--background-color);
+  border: 5px solid var(--nav-background);
 }
 
 .my-myday a .add-logo i{
@@ -317,7 +321,7 @@ nav .site-name a{
   left: 10px;
   width: 40px;
   height: 40px;
-  border: 5px solid var(--background-color);
+  border: 5px solid blue;
   border-radius: 50%;
   object-fit: cover;
   z-index: 1;
@@ -331,8 +335,8 @@ nav .site-name a{
 
 .other-profile > span{
   position: absolute;
-  top: -5px;
-  right: 0px;
+  bottom: 0px;
+  right: -5px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -352,7 +356,7 @@ nav .site-name a{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s linear;
+  transition: 0.5s;
 }
 
 .other-myday a:hover .myday-photo img{
@@ -372,6 +376,290 @@ nav .site-name a{
   color: var(--font-color);
 }
 
+.my-days .more-myday{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 100px;
+  right: -25px;
+  background-color: var(--nav-background);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.my-days .more-myday a{
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.my-days .more-myday:hover{
+  background-color: var(--hover-color);
+}
+
+.my-days .more-myday a > i{
+  padding: 10px;
+  font-size: large;
+}
+
+/* post create  */
+
+.post-create-container{
+  width: 100%;
+  padding: 10px;
+  background-color: var(--nav-background);
+  border-radius: 10px;
+}
+
+.post-create-container .upper-side{
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upper-side a{
+  text-decoration: none;
+}
+
+.upper-side a > img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.upper-side input{
+  width: 700px;
+  padding: 10px;
+  border-radius: 20px;
+  color: var(--font-color);
+  font-size: 16px;
+  outline: none;
+  background-color: var(--background-color);
+  border: none;
+}
+
+.upper-side input:hover{
+  background-color: var(--hover-color);
+}
+
+.post-create-container .lower{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lower a{
+  text-decoration: none;
+}
+
+.lower .live div > i{
+  color: red;
+}
+
+.lower .photos div > i{
+  color: green;
+}
+
+.lower .emojis div > i{
+  color: yellow;
+}
+
+.lower a div > span{
+  color: var(--font-color);
+}
+
+.lower a > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.lower a > div:hover{
+  background-color: var(--hover-color);
+}
+
+/* room  */
+.room {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: var(--nav-background);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.create-room{
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.create-room:hover{
+  background-color: var(--hover-color);
+}
+
+.create-room div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 150px;
+  padding: 10px;
+  border: 2px solid blue;
+  border-radius: 20px;
+}
+
+.room .room-item{
+  position: relative;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.room .room-item:hover{
+  filter: blur(0.2px);
+}
+
+.room .room-item > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.room .room-item div > img{
+  width: 100%;
+  height: 100%;
+}
+
+.room-item span{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.more-room{
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  text-decoration: none;
+}
+
+.more-room > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color:var(--hover-color);
+
+}
+
+.more-room > div:hover{
+  background-color: #888;
+}
+
+.more-room div > i{
+  font-size: 16px;
+  color: var(--font-color);
+}
+
+/* posts  */
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--nav-background);
+  border-radius: 10px;
+}
+
+.post-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-head-left{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-profile-logo a > img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.post-name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.post-name a{
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--font-color);
+}
+
+.post-name .post-time{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.post-time i {
+  font-size: 16px;
+  color: var(--font-color);
+}
+
+.post-head-right a{
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.post-head-right a div{
+  border-radius: 50%;
+}
+
+.post-head-right a:hover div{
+  background-color: var(--hover-color);
+}
+
+.post-head-right a div > i{
+  padding: 10px;
+}
+
+.post-text p{
+  color: var(--font-color);
+  font-size: 16px;
+  text-align: justify;
+}
+
+.post-image img{
+  width: 100%;
+}
 
 /* friends  */
 
